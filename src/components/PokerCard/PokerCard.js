@@ -5,11 +5,13 @@ import './PokerCard.css';
 
 class PokerCard extends Component {
   render() {
-    return ( <
-      div className = "PokerCard" >
-
-      <
-      /div>
+    const {name,id,img}= this.props;
+    return (
+      <ul className="PokerCard">
+      <li className="PokemonName">{name}</li>
+      <li className="PokemonId">{id}</li>
+      <li className="PokemonImg"><img src={img}/></li>
+      </ul>
     );
   }
 }
