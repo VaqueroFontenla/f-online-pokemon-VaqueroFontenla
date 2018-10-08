@@ -1,3 +1,55 @@
 .PokerCard {
+  border: none;
+  box-shadow: 0px 0px 20px 0px rgba(158, 155, 158, 1);
+  flex-grow: 1;
+}
+
+.ImgId {
+  background-color: #DFDFDF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PokemonId {
+  background-color: rgba(200, 200, 200, 0.5);
+  align-self: flex-start;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+}
+
+.NameAbility {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.PokemonName {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.pokemon__abilities {
   list-style: none;
+  text-transform: uppercase;
+  font-size: 8px;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pokemon__ability {
+  border: 1px solid grey;
+  color: grey;
+  padding: 5px;
+  border-radius: 4px;
+  margin-right: 5px;
 }

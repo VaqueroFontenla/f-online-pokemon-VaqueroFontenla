@@ -9,7 +9,11 @@ class SearchBar extends Component {
     return (
       <div className = "SearchBar" >
         {/* <label fhtmlFor="inputPotters">Search your "Pokemon"</label> */}
-        <input className="search-input" type="text" name="inputPokemons" value={this.props.name} onChange={filterPokemonByName}/>
+        <input  placeholder="Filtra Pokemons por nombre ..."               className="search-input" 
+          type="text"
+          name="inputPokemons"
+          value={this.props.name}
+          onChange={filterPokemonByName}/>
       </div>
     );
   }

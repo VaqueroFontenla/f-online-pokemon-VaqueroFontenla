@@ -56,7 +56,7 @@ filterPokemonByName(e){
       <div className="App">
         <SearchBar filterPokemonByName={this.filterPokemonByName}/>
         <PokerList  pokemons={this.state.pokemonsArray}
-                    pokemonsFiltered={this.state.pokemonsArrayFiltered}/>s
+                    pokemonsFiltered={this.state.pokemonsArrayFiltered}/>
       </div>
     )
   }
