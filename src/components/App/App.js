@@ -11,54 +11,46 @@ class App extends Component {
     pokemonName:'',
     pokemonsArrayFiltered:[]
   }
-
+this.filterPokemonByName=this.filterPokemonByName.bind(this);
 }
 
 
   componentDidMount() {
     const pokemons = [];
     const url = 'https://pokeapi.co/api/v2/pokemon/?limit=25/';
-    fetch(url)
-    .then(res => res.json())
-    .then(data => {
+    fetch(url).then(res => res.json()).then(data => {
       localStorage.setItem('data', JSON.stringify(data));
-
-      for (const pokemon of data.results) {
-        fetch(pokemon.url)
-        .then(res => res.json())
-        .then(datapokemon => {
-          localStorage.setItem('datapokemon', JSON.stringify(datapokemon));
-          pokemons.push(datapokemon);
-          this.setState({
-          pokemonsArray: pokemons
-        })
-
-          //console.log(this.state.pokemonsArray);
-
-        });
-          }
-  })
+        for (const pokemon of data.results) {
+          fetch(pokemon.url).then(res => res.json()).then(datapokemon => {
+            localStorage.setItem('datapokemon', JSON.stringify(datapokemon));
+            pokemons.push(datapokemon);
+            this.setState({pokemonsArray: pokemons})
+          });
+        }
+    })
 }
 
 filterPokemonByName(e){
-  this.setState({
+  this.setState(
+    {
     pokemonName: e.target.value
   }, ()=>{
-    const pokemonsArray=[...pokemonsArray];
-    const pokemonsFiltered=pokemonsArray.filter(item => { return item.name.toLowerCase().includes(this.state.name.toLowerCase())});
+    const pokemonsArray=[...this.state.pokemonsArray];
+    const pokemonsFiltered=pokemonsArray.filter(item => {
+      return item.name.toLowerCase().includes(this.state.pokemonName.toLowerCase())
+    });
     this.setState({
       pokemonsArrayFiltered: pokemonsFiltered
-    });
-  })
-
+    })
+  });
 }
 
   render() {
     return (
       <div className="App">
         <SearchBar filterPokemonByName={this.filterPokemonByName}/>
-        <PokerList  pokemons={this.state.pokemonsArray}/>
-
+        <PokerList  pokemons={this.state.pokemonsArray}
+                    pokemonsFiltered={this.state.pokemonsArrayFiltered}/>s
       </div>
     )
   }

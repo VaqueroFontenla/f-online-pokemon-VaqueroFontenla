@@ -10,7 +10,7 @@ class PokerCard extends Component {
       <ul className="PokerCard">
       <li className="PokemonName">{name}</li>
       <li className="PokemonId">{id}</li>
-      <li className="PokemonImg"><img src={img}/></li>
+      <li className="PokemonImg"><img src={img} alt='PokemonImage'/></li>
       </ul>
     );
   }
