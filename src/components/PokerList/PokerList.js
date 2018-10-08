@@ -39,6 +39,7 @@ const divs = [
 ];
 
 class PokerList extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -47,6 +48,7 @@ class PokerList extends Component {
 
     this.generateDivs = this.generateDivs.bind(this);
   }
+
 
   generateDivs() {
     let moreDivs = [];
@@ -73,7 +75,6 @@ class PokerList extends Component {
     } else {
       filterOrNot = pokemonsFiltered;
     }
-
     return (
     // <InfiniteScroll
     // loadMore={this.generateDivs}
@@ -82,8 +83,14 @@ class PokerList extends Component {
     // >
     <ul className="PokerList">
       {
-        filterOrNot.sort((a, b) => a.id - b.id).map(function(pokemon, id) {
-          return (<PokerCard key={id} name={pokemon.name} id={pokemon.id} img={pokemon.sprites.front_default}/>)
+        filterOrNot
+        .sort((a, b) => a.id - b.id)
+        .map(function(pokemon, id) {
+          return (
+            <PokerCard key={id} name={pokemon.name}
+                                id={pokemon.id} img={pokemon.sprites.front_default}
+                                abilities={pokemon.abilities}
+                                />)
         })
       }
     </ul>
