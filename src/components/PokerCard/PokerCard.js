@@ -6,6 +6,7 @@ import './PokerCard.css';
 class PokerCard extends Component {
   render() {
     const {name,id,img,abilities}= this.props;
+    console.log(abilities);
     return (
       <div className="PokerCard">
       <div className="PokemonName">{name}</div>
@@ -15,7 +16,7 @@ class PokerCard extends Component {
             {
               abilities.map(function(ability,index) {
                 return (
-                  <li className="pokemon__ability" key={index}>{ability.name}</li>)
+                  <li className="pokemon__ability" key={index}>{ability.ability.name}</li>)
                 })
               }
             </ul>
