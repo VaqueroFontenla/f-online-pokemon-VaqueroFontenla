@@ -89,7 +89,7 @@ class PokerList extends Component {
           return (
             <PokerCard key={id} name={pokemon.name}
                                 id={pokemon.id} img={pokemon.sprites.front_default}
-                                abilities={pokemon.abilities}
+                                abilities={pokemon.types}
                                 />)
         })
       }

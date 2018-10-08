@@ -16,7 +16,7 @@ class PokerCard extends Component {
       <ul className="pokemon__abilities">
         {
           abilities.map(function(ability, index) {
-            return (<li className="pokemon__ability" key={index}>{ability.ability.name}</li>)
+            return (<li className="pokemon__ability" key={index}>{ability.type.name}</li>)
           })
         }
       </ul>
