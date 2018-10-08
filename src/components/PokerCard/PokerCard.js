@@ -4,7 +4,6 @@ import './PokerCard.css';
 class PokerCard extends Component {
   render() {
     const {name, id, img, abilities} = this.props;
-    console.log(abilities);
     return (
       <div className="PokerCard">
       <div className="ImgId">

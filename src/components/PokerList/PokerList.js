@@ -69,7 +69,6 @@ class PokerList extends Component {
   render() {
     const {pokemons, pokemonsFiltered} = this.props;
     let filterOrNot;
-
     if (pokemonsFiltered.length === 0) {
       filterOrNot = pokemons;
     } else {

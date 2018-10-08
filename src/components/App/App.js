@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { getPokemon } from '../../services/CallApi.js';
 import SearchBar from '../SearchBar/SearchBar.js';
 import PokerList from '../PokerList/PokerList.js';
 import './App.css';
@@ -21,7 +22,9 @@ class App extends Component {
   getPokemon() {
     const pokemons = [];
     const url = 'https://pokeapi.co/api/v2/pokemon/?limit=25/';
-    fetch(url).then(res => res.json()).then(data => {
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
       localStorage.setItem('data', JSON.stringify(data));
       data.results.length = 25;
       for (const pokemon of data.results) {
@@ -32,8 +35,19 @@ class App extends Component {
         });
       }
     })
-
   }
+
+
+ //Tentativa llamar a la Api guardando la función en la carpeta services.
+  // componentDidMount() {
+  //   getPokemon();
+  //   console.log(pokemons)
+  //   this.setState({
+  //     pokemonsArray: pokemons
+  //   })
+  // }
+
+
 
   filterPokemonByName(e) {
     this.setState({
